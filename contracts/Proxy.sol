@@ -30,3 +30,6 @@ fallback() external payable {
         assembly {
             beacon := sload(_BEACON_SLOT)
         }
+
+        // Get implementation and version for this proxy from the beacon
+        address implementation = Beacon(beacon).getImplementationForSender();
