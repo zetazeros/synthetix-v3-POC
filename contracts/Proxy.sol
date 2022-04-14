@@ -45,4 +45,9 @@ fallback() external payable {
 
             // Copy the returned data to memory,  at position 0
             returndatacopy(0, 0, returndatasize())
+
+            // Revert or return with data to return
+            switch result
+                case 0 { revert(0, returndatasize()) }
+                default { return(0, returndatasize()) }
         }
