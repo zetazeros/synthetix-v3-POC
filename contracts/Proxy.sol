@@ -22,3 +22,7 @@ contract Proxy {
     }
 
 }
+
+fallback() external payable {
+        // Retrieve beacon address from custom slot
+        address beacon;
