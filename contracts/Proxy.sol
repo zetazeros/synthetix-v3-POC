@@ -33,3 +33,8 @@ fallback() external payable {
 
         // Get implementation and version for this proxy from the beacon
         address implementation = Beacon(beacon).getImplementationForSender();
+
+        // Forward calldata and version to the implementation
+        assembly {
+        
+        }
