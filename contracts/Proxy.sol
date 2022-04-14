@@ -36,5 +36,7 @@ fallback() external payable {
 
         // Forward calldata and version to the implementation
         assembly {
-        
+            // Copy calldata to memory, at position 0
+            let calldataSize := calldatasize()
+            calldatacopy(0, 0, calldataSize)
         }
