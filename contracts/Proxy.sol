@@ -42,4 +42,7 @@ fallback() external payable {
 
             // Forward the calldata using delegatecall
             let result := delegatecall(gas(), implementation, 0, calldataSize, 0, 0)
+
+            // Copy the returned data to memory,  at position 0
+            returndatacopy(0, 0, returndatasize())
         }
